@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isUser"
+            type="boolean" />
+
+        <variable
+            name="isItem"
+            type="boolean" />
+
+        <variable
+            name="isItemPath"
+            type="boolean" />
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.Prod_DetailsFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rel_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:padding="7dp">
+
+                    <ImageView
+                        android:id="@+id/back_btn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/back_arrow"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:layout_centerInParent="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/item_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="210dp"
+                            android:src="@drawable/home_1"
+                            android:scaleType="fitXY"
+                             />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:layout_marginTop="30dp"
+                            android:visibility="@{isItem? View.GONE:View.VISIBLE, default=gone}">
+
+                            <RelativeLayout
+                                android:layout_below="@+id/item_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/product_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Country house"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2 Rooms | 2 Baths  | 250 mt2"
+                                    android:textSize="16sp"
+                                    android:layout_alignParentEnd="true" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/product_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nasr City -7th distract ,  Cairo"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                android:layout_marginBottom="10dp" />
+
+                            <TextView
+                                android:id="@+id/product_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="1.450.000 "
+                                android:textColor="#30A41D"
+                                android:textSize="22sp"
+                                android:layout_marginBottom="10dp" />
+
+
+                            <TextView
+                                android:id="@+id/product_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#777777"
+                                android:textSize="22sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:visibility="@{isItem?View.VISIBLE:View.GONE,default=gone}">
+                            <RelativeLayout
+                                android:layout_below="@+id/item_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp">
+                                <TextView
+                                    android:id="@+id/txt_item_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Country house"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/black"
+                                    />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/txt_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="1.450.000 EGP"
+                                android:textColor="#30A41D"
+                                android:textSize="20sp"
+                                android:layout_marginBottom="10dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nasr City -7th distract ,  Cairo"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:layout_marginBottom="10dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:visibility="@{isItemPath?View.VISIBLE : View.GONE,default=gone}">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:id="@+id/img_plumber"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/plumber"
+                                    android:layout_marginLeft="15dp"/>
+                                <LinearLayout
+                                    android:id="@+id/lin_named"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_toRightOf="@+id/img_plumber"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Plumber"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="30.0"
+                                        android:textColor="@color/first_color"
+                                        android:textSize="16sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                </LinearLayout>
+                                <CheckBox
+                                    android:id="@+id/check_plumber"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginRight="50dp"
+                                    android:gravity="center"
+                                    />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp">
+                                <ImageView
+                                    android:id="@+id/img_carpenter"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/carpenter"
+                                    android:layout_marginLeft="15dp"/>
+                                <LinearLayout
+                                    android:id="@+id/lin_carpenter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_toRightOf="@+id/img_carpenter"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Carpenter"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="50.0"
+                                        android:textColor="@color/first_color"
+                                        android:textSize="16sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                </LinearLayout>
+                                <CheckBox
+                                    android:id="@+id/check_carpenter"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginRight="50dp"
+                                    android:gravity="center"
+                                    />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:id="@+id/img_electrician"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/electrician"
+                                    android:layout_marginLeft="15dp"/>
+                                <LinearLayout
+                                    android:id="@+id/lin_elect"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_toRightOf="@+id/img_electrician"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:layout_marginTop="5dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Electrician"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="20.0"
+                                        android:textColor="@color/first_color"
+                                        android:textSize="16sp"
+                                        android:layout_margin="5dp"
+                                        />
+                                </LinearLayout>
+                                <CheckBox
+                                    android:id="@+id/check_elect"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginRight="50dp"
+                                    android:gravity="center"
+                                    />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/back_discount_rel"
+                        android:padding="5dp"
+                        android:layout_alignParentStart="true"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20% Discount"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/circle_white_bac"
+                        android:visibility="gone">
+
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/favorite_btn"
+                            android:src="@drawable/favourite_selection"
+                            android:background="#00ffffff"
+                            />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/to_payment_screen"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/back_login_2_btn"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Sell"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="@{isUser?View.VISIBLE : View.GONE, default=gone}"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

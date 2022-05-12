@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeScreenFragment">
+
+    <fragment
+        android:id="@+id/welcomeScreenFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.WelcomeScreenFragment"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/welcomeScreenFragment"
+            app:launchSingleTop="true"/>
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_choosedPath_Fragment"
+            app:destination="@id/choosedPath_Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument app:argType="string"
+            app:nullable="false"
+            android:name="userType"/>
+        <argument app:argType="string"
+            app:nullable="false"
+            android:name="pathType"/>
+        <action
+            android:id="@+id/action_homeFragment_to_addProperty_Step1Fragment"
+            app:destination="@id/addProperty_Step1Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_welcomeScreenFragment"
+            app:destination="@id/welcomeScreenFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"/>
+        <action
+            android:id="@+id/action_homeFragment_to_prod_DetailsFragment"
+            app:destination="@id/prod_DetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addItemsFragment"
+            app:destination="@id/addItemsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/loiginScreenFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.LoginScreenFragment"
+        android:label="fragment_loigin_screen"
+        tools:layout="@layout/fragment_loigin_screen">
+        <argument app:argType="string"
+                  app:nullable="false"
+                  android:name="userType"/>
+        <action
+            android:id="@+id/action_loiginScreenFragment_to_registerScreenFragment"
+            app:destination="@id/registerScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loiginScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loiginScreenFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registerScreenFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.RegisterScreenFragment"
+        android:label="fragment_register_screen"
+        tools:layout="@layout/fragment_register_screen" >
+        <argument app:argType="string"
+            app:nullable="false"
+            android:name="userType"/>
+        <action
+            android:id="@+id/action_registerScreenFragment_to_loiginScreenFragment"
+            app:destination="@id/loiginScreenFragment" />
+        <action
+            android:id="@+id/action_registerScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/registerScreenFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen_Fragment"
+        android:name="com.mahmoudbashir.realstate.fragments.HomeScreen_Fragment"
+        android:label="fragment_home_screen_"
+        tools:layout="@layout/fragment_home_screen_" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.RequestsFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_requests" />
+    <fragment
+        android:id="@+id/addProperty_Step1Fragment"
+        android:name="com.mahmoudbashir.realstate.fragments.AddProperty_Step1Fragment"
+        android:label="fragment_add_property__step1"
+        tools:layout="@layout/fragment_add_property__step1" >
+        <action
+            android:id="@+id/action_addProperty_Step1Fragment_to_addProperty_Step2Fragment"
+            app:destination="@id/addProperty_Step2Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProperty_Step2Fragment"
+        android:name="com.mahmoudbashir.realstate.fragments.AddProperty_Step2Fragment"
+        android:label="fragment_add_property__step2"
+        tools:layout="@layout/fragment_add_property__step2" >
+        <argument
+            android:name="step1model"
+            app:argType="com.mahmoudbashir.realstate.pojo.step1Model" />
+        <action
+            android:id="@+id/action_addProperty_Step2Fragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/nav_graph"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/choosedPath_Fragment"
+        android:name="com.mahmoudbashir.realstate.fragments.choosedPath_Fragment"
+        android:label="fragment_choosed_path_"
+        tools:layout="@layout/fragment_choosed_path_" >
+        <argument android:name="pathType"
+            app:nullable="false"
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_choosedPath_Fragment_to_registerScreenFragment"
+            app:destination="@id/registerScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_choosedPath_Fragment_to_loiginScreenFragment"
+            app:destination="@id/loiginScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/prod_DetailsFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.Prod_DetailsFragment"
+        android:label="fragment_prod__details"
+        tools:layout="@layout/fragment_prod__details" >
+        <argument
+            android:name="proModel"
+            app:argType="com.mahmoudbashir.realstate.pojo.productModel" />
+
+        <argument android:name="path_user_clicked"
+            app:argType="string"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_prod_DetailsFragment_to_paymentScreenFragment"
+            app:destination="@id/paymentScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="itemModel"
+            app:argType="com.mahmoudbashir.realstate.pojo.ItemModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentScreenFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.PaymentScreenFragment"
+        android:label="fragment_payment_screen"
+        tools:layout="@layout/fragment_payment_screen" >
+        <action
+            android:id="@+id/action_paymentScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/paymentScreenFragment"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="proModel"
+            app:argType="com.mahmoudbashir.realstate.pojo.productModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/addItemsFragment"
+        android:name="com.mahmoudbashir.realstate.fragments.AddItemsFragment"
+        android:label="fragment_add_items"
+        tools:layout="@layout/fragment_add_items" />
+</navigation>

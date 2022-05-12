@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.AddItemsFragment"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rel_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize">
+
+                    <ImageButton
+                        android:id="@+id/back_btn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/back_arrow"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_bar"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Item "
+                        android:textSize="25sp"
+                        android:textColor="@color/first_color"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/rel_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Name"
+                        android:textSize="21sp"
+                        android:textColor="@color/second_color"
+                        android:layout_margin="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <EditText
+                            android:id="@+id/edt_name"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edt_property_back"
+                            android:hint="Enter item name"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:inputType="text"
+                            android:gravity="center|left"
+                            />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Price"
+                        android:textSize="21sp"
+                        android:textColor="@color/second_color"
+                        android:layout_margin="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <EditText
+                            android:id="@+id/edt_price"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edt_property_back"
+                            android:hint="Enter item price"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:inputType="numberDecimal"
+                            android:gravity="center|left"
+                            />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Description"
+                        android:textSize="21sp"
+                        android:textColor="@color/second_color"
+                        android:layout_margin="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <EditText
+                            android:id="@+id/edt_desc"
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:padding="8dp"
+                            android:background="@drawable/edt_property_back"
+                            android:hint="Enter item description"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:inputType="text"
+                            android:gravity="left"
+                            />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upload Image"
+                            android:textSize="21sp"
+                            android:textColor="@color/second_color"
+                            android:layout_margin="10dp" />
+
+                        <RelativeLayout
+                            android:id="@+id/rel_upload_imgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:padding="10dp"
+                            android:background="@drawable/back_upload_img">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Upload your image here .."
+                                android:textSize="18sp"
+                                android:layout_centerVertical="true" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/upload_btn"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="15dp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <ImageView
+                                android:id="@+id/img_v"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:numColumns="4"
+                                android:scaleType="fitXY"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="50dp">
+
+                        <Button
+                            android:id="@+id/submit_btn"
+                            android:layout_width="170dp"
+                            android:layout_height="45dp"
+                            android:layout_centerInParent="true"
+                            android:textSize="17sp"
+                            android:textColor="@color/white"
+                            android:text="Submit"
+                            android:textAllCaps="false"
+                            android:background="@drawable/back_register_btn" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

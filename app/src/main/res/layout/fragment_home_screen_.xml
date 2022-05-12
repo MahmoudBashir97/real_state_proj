@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.HomeScreen_Fragment"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rel_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#9020AE09">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:src="@drawable/ic_baseline_home_24"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:textSize="26sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rel_bar"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@drawable/radio_nonselected_back"
+                    android:layout_margin="10dp">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupChoose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerInParent="true"
+                        android:weightSum="2"
+                        android:pointerIcon="arrow"
+                        android:checkedButton="@drawable/radio_button_selector_sort">
+
+                        <RadioButton
+                            android:id="@+id/sell_rbutton"
+                            android:layout_width="30dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="SELL"
+                            android:button="@null"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/background_radio" />
+
+                        <RadioButton
+                            android:id="@+id/rent_rbutton"
+                            android:layout_width="30dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:text="RENT"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/background_radio" />
+
+                        <RadioButton
+                            android:id="@+id/rb_items"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:text="Items"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/background_radio" />
+
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="275dp"
+                        android:layout_height="45dp"
+                        android:padding="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/radio_nonselected_back">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/pin_location"
+                                android:layout_marginRight="5dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Search for a Location .."
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/radio_nonselected_back">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/filter_icon"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/back_rec_popular">
+
+                <TextView
+                    android:id="@+id/txt_popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Popular"
+                    android:textSize="20sp"
+                    android:textColor="#D8C83B"
+                    android:layout_margin="10dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/txt_popular"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/single_item_popular_row" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
